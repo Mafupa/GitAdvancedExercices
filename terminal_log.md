@@ -1,3 +1,7 @@
+# Part 1: Refining Git History (10 Challenges)
+
+## Missing File Fix
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log
 commit 95e3501966ed6062d79e7fe80cbd0fd2131bea57 (HEAD -> main)
 Author: Mafupa <ryankarera@gmail.com>
@@ -31,32 +35,9 @@ C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git commit --amend -m
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test3.md
  create mode 100644 test4.md
-
-C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log
-commit e17fd7139bd4bd88315a394c462ee2ed7e5223d1 (HEAD -> main)
-Author: Mafupa <ryankarera@gmail.com>
-Date:   Tue Mar 4 10:41:19 2025 +0200
-
-    Create third and fourth files but appropriate
-
-commit 7ce5af08e074c10881781958466d2ba5746340e2
-Author: Mafupa <ryankarera@gmail.com>
-Date:   Tue Mar 4 10:41:18 2025 +0200
-
-    chore: Create another file
-
-commit 3acc09c9a2c60fd20912acc364b676296a16cb0e
-Author: Mafupa <ryankarera@gmail.com>
-Date:   Tue Mar 4 10:41:18 2025 +0200
-
-    chore: Create initial file
-
-commit cafce56de22dcd8f056c1881a3689a6099d055c5 (origin/main, origin/HEAD)
-Author: Mafupa <ryankarera@gmail.com>
-Date:   Tue Feb 25 12:07:25 2025 +0200
-
-    Repo creation
-
+```
+## Editing Commit History
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git rebase -i HEAD~2
 Stopped at 7ce5af0...  chore: Create another file
 You can amend the commit now, with
@@ -100,7 +81,9 @@ Author: Mafupa <ryankarera@gmail.com>
 Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
-
+```
+## Keeping History Tidy - Squashing Commits
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git rebase -i HEAD~3
 [detached HEAD 6ca294a] chore: Create initial file
  Date: Tue Mar 4 10:41:18 2025 +0200
@@ -128,6 +111,9 @@ Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
 
+```
+## Splitting a Commit
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git reset HEAD~
 
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git status
@@ -180,7 +166,9 @@ Author: Mafupa <ryankarera@gmail.com>
 Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
-
+```
+## Advanced Squashing
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git rebase -i HEAD~2
 [detached HEAD eb87511] Create third and fourth file
  Date: Tue Mar 4 10:47:23 2025 +0200
@@ -208,6 +196,9 @@ Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
 
+```
+## Dropping a Commit
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>vim unwanted.txt
 
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git add unwanted.txt
@@ -246,7 +237,9 @@ Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
-
+```
+## Reordering Commits
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git rebase -i
 Successfully rebased and updated refs/heads/main.
 
@@ -290,7 +283,9 @@ Author: Mafupa <ryankarera@gmail.com>
 Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
-
+```
+## Cherry-Picking Commits
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout -b ft/branch
 Switched to a new branch 'ft/branch'
 
@@ -379,7 +374,9 @@ Author: Mafupa <ryankarera@gmail.com>
 Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
-
+```
+## Visualizing Commit History
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log --graph
 * commit 82d356b32242519c7a7a51271ff4bba42a126359 (HEAD -> main)
 | Author: Mafupa <ryankarera@gmail.com>
@@ -404,5 +401,5 @@ C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log --graph
   Date:   Tue Feb 25 12:07:25 2025 +0200
 
       Repo creation
+```
 
-C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>

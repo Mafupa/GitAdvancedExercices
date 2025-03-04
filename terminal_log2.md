@@ -1,6 +1,12 @@
+# Part 2: Branching Basics (10 Challenges)
+
+## Feature Branch Creation
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout -b ft/new-feature
 Switched to a new branch 'ft/new-feature'
-
+```
+## Working on the Feature Branch
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>vim feature.txt
 
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>
@@ -11,7 +17,9 @@ C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git commit -m "Implem
 [ft/new-feature 19c1330] Implemented core functionality for new feature
  1 file changed, 1 insertion(+)
  create mode 100644 feature.txt
-
+```
+## Switching Back and Making More Changes
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
@@ -25,7 +33,11 @@ C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git commit -m "Update
 [main 6ab38f0] Updated project readme
  1 file changed, 1 insertion(+)
  create mode 100644 readme.txt
+```
+## Local vs. Remote Branches
 
+## Branch Deletion
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git merge ft/new-feature
 Merge made by the 'ort' strategy.
  feature.txt | 1 +
@@ -34,7 +46,9 @@ Merge made by the 'ort' strategy.
 
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git branch -d ft/new-feature
 Deleted branch ft/new-feature (was 19c1330).
-
+```
+## Creating a Branch from a Commit
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log
 commit c457f0b0a59d2c14435a31aa33a8f14a186bea85 (HEAD -> main)
 Merge: 6ab38f0 19c1330
@@ -124,7 +138,9 @@ Author: Mafupa <ryankarera@gmail.com>
 Date:   Tue Feb 25 12:07:25 2025 +0200
 
     Repo creation
-
+```
+## Branch Merging
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout main
 Switched to branch 'main'
 Your branch is ahead of 'origin/main' by 3 commits.
@@ -135,10 +151,14 @@ Already up to date.
 
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout ft/new-branch-from-commit
 Switched to branch 'ft/new-branch-from-commit'
-
+```
+## Branch Rebasing
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git rebase -i main
 Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
-
+```
+## Renaming Branches
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout main
 Switched to branch 'main'
 Your branch is ahead of 'origin/main' by 3 commits.
@@ -151,6 +171,9 @@ C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git branch
   ft/improved-branch-name
 * main
 
+```
+## Checking Out Detached HEAD
+```cmd
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git log
 commit c457f0b0a59d2c14435a31aa33a8f14a186bea85 (HEAD -> main, ft/improved-branch-name)
 Merge: 6ab38f0 19c1330
@@ -216,10 +239,4 @@ nothing to commit, working tree clean
 C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>ls
 README.md  feature.txt  terminal_log  test1.md  test2.md  test3.md  test4.md  test5.md
 
-C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>git checkout main
-Previous HEAD position was 19c1330 Implemented core functionality for new feature
-Switched to branch 'main'
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-C:\Users\ryank\Documents\Learn\THEGYM\GitAdvancedExercices>
+```
